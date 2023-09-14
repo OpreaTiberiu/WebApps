@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Load Bootstrap-Flask CSS here -->
+    {{ bootstrap.load_css() }}
+    <meta charset="UTF-8" />
+    <title>Library</title>
+  </head>
+  <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-8">
+            <h1>My Library</h1>
+            <ul>
+              {% for book in books: %}
+              <li>
+                <a href={{ url_for("delete", id=book.id) }} > Delete </a>
+                {{ book.title }} - {{ book.author }} -  {{ book.rating }}/10
+                <a href={{ url_for("edit", id=book.id) }} > Edit </a>
+              </li>
+              {% endfor %}
+            </ul>
+
+            <a href={{ url_for("add") }}>Add New Book</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
