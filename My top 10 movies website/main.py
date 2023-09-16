@@ -57,7 +57,6 @@ def edit(movie_id):
 
 @app.route("/add_movie", methods=["GET", "POST"])
 def add_movie():
-    print(request.args.get("movie"))
     form = Form(
         title=request.args.get("movie_title"),
         year=request.args.get("movie_year"),
