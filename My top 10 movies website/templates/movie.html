@@ -1,0 +1,14 @@
+{% from 'bootstrap5/form.html' import render_form %}
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="row">
+            <h1>{{ page_title }}</h1>
+
+            {{ render_form(form, novalidate=True) }}
+      </div>
+</div>
+{% endblock %}
